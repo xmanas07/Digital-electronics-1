@@ -4,9 +4,15 @@
 
 
 **Source code**
+*Wigly Source code*
+
 
 ```vhdl
 begin
 writeline("Boris voní");
-end
+end;
 ```
+**list**
+-p1
+-p2
+-p3
