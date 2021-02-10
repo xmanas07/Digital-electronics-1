@@ -7,6 +7,6 @@
 
 ```vhdl
 begin
-writeline('Boris voní')
+writeline("Boris voní");
 end
 ```
