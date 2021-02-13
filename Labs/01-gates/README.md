@@ -4,7 +4,7 @@
 
 ### 01-gates
 
-**list Demorgan's law
+**list **Demorgan's law
 - code listing
  ```vhdl
 begin
