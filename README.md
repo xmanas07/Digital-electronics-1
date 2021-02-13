@@ -4,7 +4,6 @@
 
 
 **Source code**
-*Wigly Source code*
 
 
 ```vhdl
