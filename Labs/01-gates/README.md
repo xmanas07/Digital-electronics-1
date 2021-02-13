@@ -2,17 +2,20 @@
 
 ## Labs
 
+### 01-gates
 
-**Source code**
-*Wigly Source code*
-
-
-```vhdl
+**list Demorgan's law
+-code listing
+ ```vhdl
 begin
 writeline("Boris voní");
 end;
 ```
-**list**
--p1
--p2
--p3
+
+
+
+
+
+
+
+
