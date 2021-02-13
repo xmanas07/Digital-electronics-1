@@ -3,7 +3,7 @@
 ## Labs
 
 ### 01-gates
-
+[playground link](https://www.edaplayground.com/x/L3Si)
 #### Demorgan's law
 - code listing
  ```vhdl
@@ -17,12 +17,11 @@ end architecture dataflow;
 ```
 - simulated waveforms screenshot
 ![](images/Demorgan.png)
-[playground link](https://www.edaplayground.com/x/L3Si)
+
 
 #### Distributive laws
 - code listing
  ```vhdl
-architecture dataflow of gates is
 architecture dataflow of gates is
 begin
     f_dlaw1_L <= (a_i and b_i) or (a_i and c_i);
@@ -34,6 +33,5 @@ end architecture dataflow;
 ```
 - simulated waveforms screenshot
 ![](images/Dlaws.png)
-[playground link](https://www.edaplayground.com/x/L3Si)
 
 
