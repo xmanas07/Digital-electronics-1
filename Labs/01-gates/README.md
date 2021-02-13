@@ -11,7 +11,8 @@ begin
 writeline("Boris voní");
 end;
 ```
-
+-chleba
+-máslo
 
 
 
