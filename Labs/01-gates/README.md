@@ -5,14 +5,14 @@
 ### 01-gates
 
 **list Demorgan's law
--code listing
+- code listing
  ```vhdl
 begin
 writeline("Boris voní");
 end;
 ```
--chleba
--máslo
+- chleba
+- máslo
 
 
 
