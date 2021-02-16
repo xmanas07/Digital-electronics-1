@@ -18,6 +18,19 @@ end architecture dataflow;
 - simulated waveforms screenshot
 ![](images/Demorgan.png)
 
+### Tabulka
+
+| **c** | **b** |**a** | **f(c,b,a)** |
+| :-: | :-: | :-: | :-: |
+| 0 | 0 | 0 | 1 |
+| 0 | 0 | 1 | 1 |
+| 0 | 1 | 0 | 0 |
+| 0 | 1 | 1 | 0 |
+| 1 | 0 | 0 | 0 |
+| 1 | 0 | 1 | 1 |
+| 1 | 1 | 0 | 0 |
+| 1 | 1 | 1 | 0 |
+<!--- 
 
 #### Distributive laws
 - code listing
