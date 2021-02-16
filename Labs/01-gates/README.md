@@ -47,7 +47,7 @@ end architecture dataflow;
 - simulated waveforms screenshot
 ![](images/Dlaws.png)
 
-### Tabuľka
+### Tabulka
 
 
 | **z** | **y** |**x** | **x and y or x and z** | **x and (y or z)** | **(x or y) and (x or z)**  | **x or (y and z)**  |
