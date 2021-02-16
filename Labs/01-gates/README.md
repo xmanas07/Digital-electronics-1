@@ -3,7 +3,7 @@
 ## Labs
 
 ### 01-gates
-[playground link](https://www.edaplayground.com/x/L3Si)
+[playground link pro oba úkoly](https://www.edaplayground.com/x/L3Si)
 #### Demorgan's law
 - code listing
  ```vhdl
@@ -47,4 +47,16 @@ end architecture dataflow;
 - simulated waveforms screenshot
 ![](images/Dlaws.png)
 
+### Tabuľka
 
+
+| **z** | **y** |**x** | **x and y or x and z** | **x and (y or z)** | **(x or y) and (x or z)**  | **x or (y and z)**  |
+| :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+| 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 0 | 0 | 1 | 0 | 0 | 1 | 1 |
+| 0 | 1 | 0 | 0 | 0 | 0 | 0 |
+| 0 | 1 | 1 | 1 | 1 | 1 | 1 |
+| 1 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 1 | 0 | 1 | 1 | 1 | 1 | 1 |
+| 1 | 1 | 0 | 0 | 0 | 1 | 1 |
+| 1 | 1 | 1 | 1 | 1 | 1 | 1 |
