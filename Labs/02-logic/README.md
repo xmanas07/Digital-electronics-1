@@ -46,6 +46,10 @@
 
 ![vzorec na SoP a PoS](images/Vzorec2.gif)
 
+### playgorund link
+
+https://www.edaplayground.com/x/EaLP
+
 ## úkol 3: 4-bit comparator
 
 ### VHDL architecture
@@ -168,7 +172,7 @@ end architecture Behavioral;
 ```
 ### Simulation console output
 
-![Screenshot](/images/cnslOut.png)
+![Screenshot](images/cnslOut.png)
 
 ### Eda playground link
 
