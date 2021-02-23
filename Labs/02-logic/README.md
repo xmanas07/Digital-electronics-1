@@ -1,36 +1,50 @@
 # Digital-electronics-1
 
-## Labs
+## úkol 1: Preparation tasks
 
-### 01-gates
-[playground link pro oba úkoly](https://www.edaplayground.com/x/L3Si)
-#### Demorgan's law
-- code listing
- ```vhdl
-architecture dataflow of gates is
-begin
-    f_o     <= ((not b_i) and a_i) or ((not c_i) and (not b_i));
-    fnand_o <= not(not((not b_i) and a_i) and not((not c_i) and (not b_i)));
-    fnor_o  <= not(b_i or (not a_i)) or not(c_i or b_i);
+| **Dec. equivalent** | **B[1:0]** | **A[1:0]** | **B > A** | **B = A** | **B < A** |
+| :-: | :-: | :-: | :-: | :-: | :-: |
+| 0 | 0 0 | 0 0 | 0 | 1 | 0 |
+| 1 | 0 0 | 0 1 | 0 | 0 | 1 |
+| 2 | 0 0 | 1 0 | 0 | 0 | 1 |
+| 3 | 0 0 | 1 1 | 0 | 0 | 1 |
+| 4 | 0 1 | 0 0 | 1 | 0 | 0 |
+| 5 | 0 1 | 0 1 | 0 | 1 | 0 |
+| 6 | 0 1 | 1 0 | 0 | 0 | 1 |
+| 7 | 0 1 | 1 1 | 0 | 0 | 1 |
+| 8 | 1 0 | 0 0 | 1 | 0 | 0 |
+| 9 | 1 0 | 0 1 | 1 | 0 | 0 |
+| 10 | 1 0 | 1 0 | 0 | 1 | 0 |
+| 11 | 1 0 | 1 1 | 0 | 0 | 1 |
+| 12 | 1 1 | 0 0 | 1 | 0 | 0 |
+| 13 | 1 1 | 0 1 | 1 | 0 | 0 |
+| 14 | 1 1 | 1 0 | 1 | 0 | 0 |
+| 15 | 1 1 | 1 1 | 0 | 1 | 0 |
 
-end architecture dataflow;
-```
-- simulated waveforms screenshot
-![](images/Demorgan.png)
+### Canonical SoP and PoS
+![SoP a PoS vzorec](images/Demorgan.png)
 
-### Tabulka
+## úkol 2: A 2-bit comparator
 
-| **c** | **b** |**a** | **f(c,b,a)** |
-| :-: | :-: | :-: | :-: |
-| 0 | 0 | 0 | 1 |
-| 0 | 0 | 1 | 1 |
-| 0 | 1 | 0 | 0 |
-| 0 | 1 | 1 | 0 |
-| 1 | 0 | 0 | 0 |
-| 1 | 0 | 1 | 1 |
-| 1 | 1 | 0 | 0 |
-| 1 | 1 | 1 | 0 |
+### Karnaugh maps
 
+#### B = A
+
+<img src="/Images/02-logic/Kmap1.png" alt="b equals a" width="400" >
+
+#### B > A
+
+<img src="/Images/02-logic/Kmap2.png" alt="b is greater than a" width="400" >
+
+#### B < A
+
+<img src="/Images/02-logic/Kmap3.png" alt="b is less than a" width="400" >
+
+### SoP and PoS
+
+![SoP a PoS](/Images/02-logic/Kmap4.png)
+
+![vzorec na SoP a PoS](/Images/02-logic/Vzorec2.gif)
 
 #### Distributive laws
 - code listing
