@@ -30,21 +30,21 @@
 
 #### B = A
 
-<img src="/Images/Kmap1.png" alt="b equals a" width="400" >
+<img src="/images/Kmap1.png" alt="b equals a" width="400" >
 
 #### B > A
 
-<img src="/Images/Kmap2.png" alt="b is greater than a" width="400" >
+<img src="/images/Kmap2.png" alt="b is greater than a" width="400" >
 
 #### B < A
 
-<img src="/Images/Kmap3.png" alt="b is less than a" width="400" >
+<img src="/images/Kmap3.png" alt="b is less than a" width="400" >
 
 ### SoP and PoS
 
-![SoP a PoS](/Images/Kmap4.png)
+![SoP a PoS](images/Kmap4.png)
 
-![vzorec na SoP a PoS](/Images/Vzorec2.gif)
+![vzorec na SoP a PoS](/images/Vzorec2.gif)
 
 ## úkol 3: 4-bit comparator
 
@@ -168,7 +168,7 @@ end architecture Behavioral;
 ```
 ### Simulation console output
 
-![Screenshot](/Images/cnslOut.png)
+![Screenshot](/images/cnslOut.png)
 
 ### Eda playground link
 
