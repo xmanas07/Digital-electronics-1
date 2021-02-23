@@ -30,7 +30,7 @@
 
 #### B = A
 
-<img src="/images/Kmap.png" alt="b equals a" width="400" >
+<img src="/images/Kmap.png">
 
 #### B > A
 
