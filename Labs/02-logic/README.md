@@ -22,7 +22,7 @@
 | 15 | 1 1 | 1 1 | 0 | 1 | 0 |
 
 ### Canonical SoP and PoS
-![SoP a PoS vzorec](images/vzorec1.gif)
+![SoP a PoS vzorec](Labs/02-logic/images/vzorec1.gif)
 
 ## úkol 2: A 2-bit comparator
 
