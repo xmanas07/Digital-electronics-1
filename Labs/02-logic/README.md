@@ -124,9 +124,11 @@ end architecture Behavioral;
 		s_b <= "0000"; s_a <= "0111"; wait for 100 ns;
 		assert ((s_B_greater_A = '0') and (s_B_equals_A = '0') and (s_B_less_A = '1'))
 		report "Test failed for input combination: 0000, 0111" severity error;
+		
 .
 .
 .
+
 		s_b <= "1111"; s_a <= "1000"; wait for 100 ns;
 		assert ((s_B_greater_A = '1') and (s_B_equals_A = '0') and (s_B_less_A = '0'))
 		report "Test failed for input combination: 1111, 1000" severity error;
@@ -164,3 +166,10 @@ end architecture Behavioral;
         wait;
     end process p_stimulus;
 ```
+### Simulation console output
+
+![Screenshot](/Images/02-logic/cnslOut.png)
+
+### Eda playground link
+
+https://www.edaplayground.com/x/9mQM
