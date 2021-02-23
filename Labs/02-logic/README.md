@@ -34,17 +34,17 @@
 
 #### B > A
 
-<img src="/Images/02-logic/Kmap2.png" alt="b is greater than a" width="400" >
+<img src="/Images/Kmap2.png" alt="b is greater than a" width="400" >
 
 #### B < A
 
-<img src="/Images/02-logic/Kmap3.png" alt="b is less than a" width="400" >
+<img src="/Images/Kmap3.png" alt="b is less than a" width="400" >
 
 ### SoP and PoS
 
-![SoP a PoS](/Images/02-logic/Kmap4.png)
+![SoP a PoS](/Images/Kmap4.png)
 
-![vzorec na SoP a PoS](/Images/02-logic/Vzorec2.gif)
+![vzorec na SoP a PoS](/Images/Vzorec2.gif)
 
 ## úkol 3: 4-bit comparator
 
@@ -168,7 +168,7 @@ end architecture Behavioral;
 ```
 ### Simulation console output
 
-![Screenshot](/Images/02-logic/cnslOut.png)
+![Screenshot](/Images/cnslOut.png)
 
 ### Eda playground link
 
