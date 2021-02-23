@@ -46,7 +46,7 @@
 
 ![vzorec na SoP a PoS](images/Vzorec2.gif)
 
-### playgorund link
+### playground link
 
 https://www.edaplayground.com/x/EaLP
 
