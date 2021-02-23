@@ -28,23 +28,23 @@
 
 ### Karnaugh maps
 
-#### B = A
+#### B equals A
 
-<img src="/images/Kmap1.png" alt="b equals a" width="400">
+<img src="images/Kmap1.png" alt="b equals a" width="400">
 
-#### B > A
+#### B is greater than A
 
-<img src="/images/Kmap2.png" alt="b is greater than a" width="400" >
+<img src="images/Kmap2.png" alt="b is greater than a" width="400" >
 
-#### B < A
+#### B is less than A
 
-<img src="/images/Kmap3.png" alt="b is less than a" width="400" >
+<img src="images/Kmap3.png" alt="b is less than a" width="400" >
 
 ### SoP and PoS
 
 ![SoP a PoS](images/Kmap4.png)
 
-![vzorec na SoP a PoS](/images/Vzorec2.gif)
+![vzorec na SoP a PoS](images/Vzorec2.gif)
 
 ## úkol 3: 4-bit comparator
 
