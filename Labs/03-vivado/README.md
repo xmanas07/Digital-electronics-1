@@ -65,7 +65,7 @@ p_stimulus : process
 ```
 ### Screenshot with waveforms
 
-![Screenshot](/images/output_4bit1_Mux.png)
+![Screenshot](images/output_4bit1_Mux.png)
 
 ## úkol 3: Vivado tutorial
 
