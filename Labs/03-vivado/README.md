@@ -79,48 +79,48 @@ p_stimulus : process
 
 #### 3. krok
 
-![Screenshot](images/01.png)
+![Screenshot](images/03.png)
 
 #### 4. krok
 
-![Screenshot](images/01.png)
+![Screenshot](images/04.png)
 
 #### 5. krok
 
-![Screenshot](images/01.png)
+![Screenshot](images/05.png)
 
 #### 6. krok
 
-![Screenshot](images/01.png)
+![Screenshot](images/06.png)
 
 #### 7. krok
 
-![Screenshot](images/01.png)
+![Screenshot](images/07.png)
 
 #### 8. krok
 
-![Screenshot](images/01.png)
+![Screenshot](images/08.png)
 
 #### 9. krok
 
-![Screenshot](images/01.png)
+![Screenshot](images/09.png)
 
 #### 10. krok
 
-![Screenshot](images/01.png)
+![Screenshot](images/10.png)
 
 #### 11. krok
 
-![Screenshot](images/01.png)
+![Screenshot](images/11.png)
 
 #### 12. krok
 
-![Screenshot](images/01.png)
+![Screenshot](images/12.png)
 
 #### 13. krok
 
-![Screenshot](images/01.png)
+![Screenshot](images/13.png)
 
 #### 14. krok
 
-![Screenshot](images/01.png)
+![Screenshot](images/14.png)
