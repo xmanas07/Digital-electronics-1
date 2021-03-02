@@ -1,179 +1,72 @@
 # Digital-electronics-1
 
-## úkol 1: Preparation tasks
+## úkol 1: Table with connection of 16 slide switches and 16 LEDs
 
-| **Dec. equivalent** | **B[1:0]** | **A[1:0]** | **B > A** | **B = A** | **B < A** |
-| :-: | :-: | :-: | :-: | :-: | :-: |
-| 0 | 0 0 | 0 0 | 0 | 1 | 0 |
-| 1 | 0 0 | 0 1 | 0 | 0 | 1 |
-| 2 | 0 0 | 1 0 | 0 | 0 | 1 |
-| 3 | 0 0 | 1 1 | 0 | 0 | 1 |
-| 4 | 0 1 | 0 0 | 1 | 0 | 0 |
-| 5 | 0 1 | 0 1 | 0 | 1 | 0 |
-| 6 | 0 1 | 1 0 | 0 | 0 | 1 |
-| 7 | 0 1 | 1 1 | 0 | 0 | 1 |
-| 8 | 1 0 | 0 0 | 1 | 0 | 0 |
-| 9 | 1 0 | 0 1 | 1 | 0 | 0 |
-| 10 | 1 0 | 1 0 | 0 | 1 | 0 |
-| 11 | 1 0 | 1 1 | 0 | 0 | 1 |
-| 12 | 1 1 | 0 0 | 1 | 0 | 0 |
-| 13 | 1 1 | 0 1 | 1 | 0 | 0 |
-| 14 | 1 1 | 1 0 | 1 | 0 | 0 |
-| 15 | 1 1 | 1 1 | 0 | 1 | 0 |
+| **LED** | **Connection** | **Switch** | **Connection** | 
+| :-: | :-: | :-: | :-: |
+| LED0 | H17 | SW0 | J15 |
+| LED1 | K15 | SW1 | L16 |
+| LED2 | J13 | SW2 | M13 |
+| LED3 | N14 | SW3 | R15 |
+| LED4 | R18 | SW4 | R17 |
+| LED5 | V17 | SW5 | T18 |
+| LED6 | U17 | SW6 | U18 |
+| LED7 | U16 | SW7 | R13 |
+| LED8 | V16 | SW8 | T8 |
+| LED9 | T15 | SW9 | U8 |
+| LED10 | U14 | SW10 | R16 |
+| LED11 | T16 | SW11 | T13 |
+| LED12 | V15 | SW12 | H6 |
+| LED13 | V14 | SW13 | U12 |
+| LED14 | V12 | SW14 | U11 |
+| LED15 | V11 | SW15 | V10 |
 
-### Canonical SoP and PoS
-![SoP a PoS vzorec](images/Vzorec1.gif)
+## úkol 2: 2bit wide 4-to-1 multiplexer
 
-## úkol 2: A 2-bit comparator
-
-### Karnaugh maps
-
-#### B equals A
-
-<img src="images/Kmap1.png" alt="b equals a" width="400">
-
-#### B is greater than A
-
-<img src="images/Kmap2.png" alt="b is greater than a" width="400" >
-
-#### B is less than A
-
-<img src="images/Kmap3.png" alt="b is less than a" width="400" >
-
-### SoP and PoS
-
-![SoP a PoS](images/Kmap4.png)
-
-![vzorec na SoP a PoS](images/Vzorec2.gif)
-
-### playground link
-
-https://www.edaplayground.com/x/EaLP
-
-## úkol 3: 4-bit comparator
-
-### VHDL architecture
+### VHDL architecture (`mux_2bit_4to1.vhd`)
 
 ```vhdl
-entity comparator_2bit is
-    port(
-        a_i           : in  std_logic_vector(4 - 1 downto 0);
-        b_i           : in  std_logic_vector(4 - 1 downto 0);
-
-
-        -- COMPLETE THE ENTITY DECLARATION
-
-
-	B_greater_A_o    : out std_logic;
-        B_equals_A_o     : out std_logic;
-        B_less_A_o       : out std_logic       -- B is less than A
-    );
-end entity comparator_2bit;
-
-------------------------------------------------------------------------
--- Architecture body for 2-bit binary comparator
-------------------------------------------------------------------------
-architecture Behavioral of comparator_2bit is
+architecture Behavioral of mux_2bit_4to1 is
 begin
-    B_less_A_o   <= '1' when (b_i < a_i) else '0';
 
+    f_o <= a_i when sel_i = "00" else
+           b_i when sel_i = "01" else
+           c_i when sel_i = "10" else
+           d_i;
 
-    -- WRITE "GREATER" AND "EQUALS" ASSIGNMENTS HERE
-    
-    B_greater_A_o   <= '1' when (b_i > a_i) else '0';
-    B_equals_A_o    <= '1' when (b_i = a_i) else '0';
-
-
-end architecture Behavioral;
-
+end Behavioral;
 ```
-
-### VHDL stimulus process  (`design.vhd`)
+### VHDL stimulus proces (`tb_mux_2bit_4to1.vhd`)
 
 ```vhdl
-    p_stimulus : process
+p_stimulus : process
     begin
-        -- Report a note at the beginning of stimulus process
+        -- Report a note at the begining of stimulus process
         report "Stimulus process started" severity note;
 
+        s_a <= "00"; s_b <= "01"; s_c <= "10"; s_d <= "11"; s_sel <= "00"; 
+        wait for 250 ns;
 
-		s_b <= "0000"; s_a <= "0000"; wait for 100 ns;
-		assert ((s_B_greater_A = '0') and (s_B_equals_A = '1') and (s_B_less_A = '0'))
-		report "Test failed for input combination: 0000, 0000" severity error;
+        s_a <= "00"; s_b <= "01"; s_c <= "10"; s_d <= "11"; s_sel <= "00";
+        s_sel <= "01";
+        wait for 250 ns;
+  
+        s_a <= "00"; s_b <= "01"; s_c <= "10"; s_d <= "11"; s_sel <= "00";      
+        s_sel <= "10";
+        wait for 250 ns;
+   
+        s_a <= "00"; s_b <= "01"; s_c <= "10"; s_d <= "11"; s_sel <= "00";
+        s_sel <= "11";
+        wait for 250 ns;
 
-		s_b <= "0000"; s_a <= "0001"; wait for 100 ns;
-		assert ((s_B_greater_A = '0') and (s_B_equals_A = '1') and (s_B_less_A = '0')) --chyba
-		report "Test failed for input combination: 0000, 0001" severity error;
-
-		s_b <= "0000"; s_a <= "0010"; wait for 100 ns;
-		assert ((s_B_greater_A = '0') and (s_B_equals_A = '0') and (s_B_less_A = '1'))
-		report "Test failed for input combination: 0000, 0010" severity error;
-
-		s_b <= "0000"; s_a <= "0011"; wait for 100 ns;
-		assert ((s_B_greater_A = '0') and (s_B_equals_A = '0') and (s_B_less_A = '1'))
-		report "Test failed for input combination: 0000, 0011" severity error;
-
-		s_b <= "0000"; s_a <= "0100"; wait for 100 ns;
-		assert ((s_B_greater_A = '0') and (s_B_equals_A = '0') and (s_B_less_A = '1'))
-		report "Test failed for input combination: 0000, 0100" severity error;
-
-		s_b <= "0000"; s_a <= "0101"; wait for 100 ns;
-		assert ((s_B_greater_A = '0') and (s_B_equals_A = '0') and (s_B_less_A = '1'))
-		report "Test failed for input combination: 0000, 0101" severity error;
-
-		s_b <= "0000"; s_a <= "0110"; wait for 100 ns;
-		assert ((s_B_greater_A = '0') and (s_B_equals_A = '0') and (s_B_less_A = '1'))
-		report "Test failed for input combination: 0000, 0110" severity error;
-
-		s_b <= "0000"; s_a <= "0111"; wait for 100 ns;
-		assert ((s_B_greater_A = '0') and (s_B_equals_A = '0') and (s_B_less_A = '1'))
-		report "Test failed for input combination: 0000, 0111" severity error;
-		
-.
-.
-.
-
-		s_b <= "1111"; s_a <= "1000"; wait for 100 ns;
-		assert ((s_B_greater_A = '1') and (s_B_equals_A = '0') and (s_B_less_A = '0'))
-		report "Test failed for input combination: 1111, 1000" severity error;
-
-		s_b <= "1111"; s_a <= "1001"; wait for 100 ns;
-		assert ((s_B_greater_A = '1') and (s_B_equals_A = '0') and (s_B_less_A = '0'))
-		report "Test failed for input combination: 1111, 1001" severity error;
-
-		s_b <= "1111"; s_a <= "1010"; wait for 100 ns;
-		assert ((s_B_greater_A = '1') and (s_B_equals_A = '0') and (s_B_less_A = '0'))
-		report "Test failed for input combination: 1111, 1010" severity error;
-
-		s_b <= "1111"; s_a <= "1011"; wait for 100 ns;
-		assert ((s_B_greater_A = '1') and (s_B_equals_A = '0') and (s_B_less_A = '0'))
-		report "Test failed for input combination: 1111, 1011" severity error;
-
-		s_b <= "1111"; s_a <= "1100"; wait for 100 ns;
-		assert ((s_B_greater_A = '1') and (s_B_equals_A = '0') and (s_B_less_A = '0'))
-		report "Test failed for input combination: 1111, 1100" severity error;
-
-		s_b <= "1111"; s_a <= "1101"; wait for 100 ns;
-		assert ((s_B_greater_A = '1') and (s_B_equals_A = '0') and (s_B_less_A = '0'))
-		report "Test failed for input combination: 1111, 1101" severity error;
-
-		s_b <= "1111"; s_a <= "1110"; wait for 100 ns;
-		assert ((s_B_greater_A = '1') and (s_B_equals_A = '0') and (s_B_less_A = '0'))
-		report "Test failed for input combination: 1111, 1110" severity error;
-
-		s_b <= "1111"; s_a <= "1111"; wait for 100 ns;
-		assert ((s_B_greater_A = '0') and (s_B_equals_A = '1') and (s_B_less_A = '0'))
-		report "Test failed for input combination: 1111, 1111" severity error;
-        
-        -- Report a note at the end of stimulus process
         report "Stimulus process finished" severity note;
         wait;
     end process p_stimulus;
 ```
-### Simulation console output
+### Screenshot with waveforms
 
-![Screenshot](images/cnslOut.png)
+![Screenshot](/images/output_4bit1_Mux.png)
 
-### Eda playground link
+## úkol 3: Vivado tutorial
 
-https://www.edaplayground.com/x/9mQM
+
