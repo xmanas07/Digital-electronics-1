@@ -162,7 +162,7 @@ end architecture testbench;
 ![Screenshot](images/scr2.png)
 
 
-## úkol 3: Top level
+
 
 ### VHDL source architecture (`top.vhd`)
 
@@ -216,9 +216,9 @@ begin
 end architecture Behavioral;
 ```
 
+## úkol 3: Image of the eight-digit display driver
 
 
-### Image of the eight-digit display driver
 
 ![Screenshot](images/scr3.png)
 
