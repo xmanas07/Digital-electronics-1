@@ -218,7 +218,7 @@ end architecture Behavioral;
 
 
 
-#### Image of the eight-digit display driver
+### Image of the eight-digit display driver
 
 ![Screenshot](images/scr3.png)
 
