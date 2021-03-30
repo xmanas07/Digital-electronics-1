@@ -25,3 +25,5 @@ file mkdir C:/Documents/Labs/07-ffs/flip_flops/flip_flops.srcs/constrs_1
 file mkdir C:/Documents/Labs/07-ffs/flip_flops/flip_flops.srcs/constrs_1/new
 close [ open C:/Documents/Labs/07-ffs/flip_flops/flip_flops.srcs/constrs_1/new/nexys-a7-50t.xdc w ]
 add_files -fileset constrs_1 C:/Documents/Labs/07-ffs/flip_flops/flip_flops.srcs/constrs_1/new/nexys-a7-50t.xdc
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Mar 30 19:54:37 2021...
