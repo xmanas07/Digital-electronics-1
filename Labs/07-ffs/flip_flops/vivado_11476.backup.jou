@@ -1,0 +1,42 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Tue Mar 30 16:41:32 2021
+# Process ID: 11476
+# Current directory: C:/Documents/Labs/07-ffs/flip_flops
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent20096 C:\Documents\Labs\07-ffs\flip_flops\flip_flops.xpr
+# Log file: C:/Documents/Labs/07-ffs/flip_flops/vivado.log
+# Journal file: C:/Documents/Labs/07-ffs/flip_flops\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Documents/Labs/07-ffs/flip_flops/flip_flops.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config C:/Documents/Labs/07-ffs/flip_flops/tb_d_latch_behav.wcfg
+source tb_d_ff_arst.tcl
+close_sim
+launch_simulation
+open_wave_config C:/Documents/Labs/07-ffs/flip_flops/tb_d_latch_behav.wcfg
+source tb_d_ff_arst.tcl
+close_sim
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top d_latch [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top tb_d_latch [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+open_wave_config C:/Documents/Labs/07-ffs/flip_flops/tb_d_latch_behav.wcfg
+source tb_d_latch.tcl
+close_sim
