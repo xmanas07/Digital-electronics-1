@@ -3,11 +3,7 @@
 ## úkol 1: Preparation tasks
 ### characteristic equations and complete truth tables for D, JK, T flip-flops
 
-\begin{align*}
-    q_{n+1}^D =&~ \\
-    q_{n+1}^{JK} =&\\
-    q_{n+1}^T =&\\
-\end{align*}-->
+
 
    | **clk** | **d** | **q(n)** | **q(n+1)** | **Comments** |
    | :-: | :-: | :-: | :-: | :-- |
@@ -33,7 +29,7 @@
    | ![rising](images/eq_uparrow.png) | 0 | 1 | 0 | Reset |
    | ![rising](images/eq_uparrow.png) | 1 | 0 | 1 | Toggle |
    | ![rising](images/eq_uparrow.png) | 1 | 1 | 0 | Toggle |
-<!--
+
 ![Screenshot](images/scr1.png)
 
 ## úkol 2: Display driver
