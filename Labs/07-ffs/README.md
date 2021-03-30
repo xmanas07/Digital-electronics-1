@@ -33,7 +33,7 @@
    | ![rising](images/eq_uparrow.png) | 0 | 1 | 0 | Reset |
    | ![rising](images/eq_uparrow.png) | 1 | 0 | 1 | Toggle |
    | ![rising](images/eq_uparrow.png) | 1 | 1 | 0 | Toggle |
-
+<!--
 ![Screenshot](images/scr1.png)
 
 ## úkol 2: Display driver
