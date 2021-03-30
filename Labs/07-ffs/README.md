@@ -143,7 +143,7 @@ end process p_stimulus;
 ### p_d_ff_arst process (`d_ff_arst`)
 
 ```vhdl
-    p_d_latch : process (arst, clk)
+    p_d_ff_arst : process (arst, clk)
     begin
         if  (arst = '1') then
             q       <= '0';
