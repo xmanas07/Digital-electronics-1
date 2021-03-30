@@ -3,7 +3,7 @@
 ## úkol 1: Preparation tasks
 ### characteristic equations and complete truth tables for D, JK, T flip-flops
 
-
+![Screenshot](images/eq_pic.png)
 
    | **clk** | **d** | **q(n)** | **q(n+1)** | **Comments** |
    | :-: | :-: | :-: | :-: | :-- |
@@ -30,7 +30,7 @@
    | ![rising](images/eq_uparrow.png) | 1 | 0 | 1 | Toggle |
    | ![rising](images/eq_uparrow.png) | 1 | 1 | 0 | Toggle |
 
-![Screenshot](images/scr1.png)
+
 
 ## úkol 2: Display driver
 
