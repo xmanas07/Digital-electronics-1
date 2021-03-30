@@ -663,5 +663,9 @@ end process p_reset_gen;
 ![Screenshot](images/sim5.png)
 
 
+## Úkol 4: Shift register
+
+![Screenshot](images/pic1.png)
+
 
 
