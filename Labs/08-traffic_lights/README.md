@@ -180,7 +180,11 @@ p_output_fsm : process(s_state)
 
 ### State table
 
+![Screenshot](images/pic1.png)
+
 ### State diagram
+
+![Screenshot](images/pic2.png)
 
 ### p_smart_traffic_fsm process (`tlc`)
 
