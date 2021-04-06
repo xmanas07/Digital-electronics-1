@@ -30,98 +30,142 @@
 
 ![](images/diagram_trafic.png)
 
-### p_d_latch process (`d_latch`)
+### p_traffic_fsm process (`tlc`)
 
 ```vhdl
-p_d_latch   : process (d, arst, clk)
+    p_traffic_fsm : process(clk)
     begin
-        if  (arst = '1') then
-            q       <= '0';
-            q_bar   <= '1';
-        elsif (clk = '1')then
-            q       <=  d;
-            q_bar   <=  (not d);
-            
-        end if;
-    end process p_d_latch;
+        if rising_edge(clk) then
+            if (reset = '1') then       -- Synchronous reset
+                s_state <= STOP1 ;      -- Set initial state
+                s_cnt   <= c_ZERO;      -- Clear all bits
+
+            elsif (s_en = '1') then
+                -- Every 250 ms, CASE checks the value of the s_state 
+                -- variable and changes to the next state according 
+                -- to the delay value.
+                case s_state is
+
+                    -- If the current state is STOP1, then wait 1 sec
+                    -- and move to the next GO_WAIT state.
+                    when STOP1 =>
+                        -- Count up to c_DELAY_1SEC
+                        if (s_cnt < c_DELAY_1SEC) then
+                            s_cnt <= s_cnt + 1;
+                        else
+                            -- Move to the next state
+                            s_state <= WEST_GO;
+                            -- Reset local counter value
+                            s_cnt   <= c_ZERO;
+                        end if;
+
+                    when WEST_GO =>
+       
+                        -- Count up to c_DELAY_4SEC
+                        if (s_cnt < c_DELAY_4SEC) then
+                            s_cnt <= s_cnt + 1;
+                        else
+                            -- Move to the next state
+                            s_state <= WEST_WAIT;
+                            -- Reset local counter value
+                            s_cnt   <= c_ZERO;
+                        end if;
+
+                    when WEST_WAIT =>
+                     
+                        -- Count up to c_DELAY_2SEC
+                        if (s_cnt < c_DELAY_2SEC) then
+                            s_cnt <= s_cnt + 1;
+                        else
+                            -- Move to the next state
+                            s_state <= STOP2;
+                            -- Reset local counter value
+                            s_cnt   <= c_ZERO;
+                        end if;
+                        
+                    when STOP2 =>
+                     
+                        -- Count up to c_DELAY_1SEC
+                        if (s_cnt < c_DELAY_1SEC) then
+                            s_cnt <= s_cnt + 1;
+                        else
+                            -- Move to the next state
+                            s_state <= SOUTH_GO;
+                            -- Reset local counter value
+                            s_cnt   <= c_ZERO;
+                        end if;   
+                    
+                    when SOUTH_GO =>
+                       
+                        -- Count up to c_DELAY_4SEC
+                        if (s_cnt < c_DELAY_4SEC) then
+                            s_cnt <= s_cnt + 1;
+                        else
+                            -- Move to the next state
+                            s_state <= SOUTH_WAIT;
+                            -- Reset local counter value
+                            s_cnt   <= c_ZERO;
+                        end if;
+                        
+                    when SOUTH_WAIT =>
+                   
+                        -- Count up to c_DELAY_2SEC
+                        if (s_cnt < c_DELAY_2SEC) then
+                            s_cnt <= s_cnt + 1;
+                        else
+                            -- Move to the next state
+                            s_state <= STOP1;
+                            -- Reset local counter value
+                            s_cnt   <= c_ZERO;
+                        end if;                      
+                    -- It is a good programming practice to use the 
+                    -- OTHERS clause, even if all CASE choices have 
+                    -- been made. 
+                    when others =>
+                        s_state <= STOP1;
+
+                end case;
+            end if; -- Synchronous reset
+        end if; -- Rising edge
+    end process p_traffic_fsm;
 ```
 
-### VHDL reset and stimulus processes (`tb_d_latch`)
+### p_output_fsm process (`tlc`)
 
 ```vhdl
-p_reset_gen : process
+p_output_fsm : process(s_state)
     begin
-        s_arst <= '0';
-        wait for 21 ns;
-        
-      
-        s_arst <= '1';
-        wait for 51 ns;
-       
-        
-        s_arst <= '0';
-        wait for 41 ns;
-        
-        
-        s_arst <= '1';
-        wait for 60 ns;
-       
-        s_arst <= '0';
-        wait;
-end process p_reset_gen;
+        case s_state is
+            when STOP1 =>
+                south_o <= c_RED;    -- RED (RGB = 100)
+                west_o  <= c_RED;   
+            when WEST_GO =>
+                south_o <= c_RED;
+                west_o  <= c_GREEN;  -- GREEN (RGB = 010)
 
-p_stimulus  :   process
-    begin
+                -- WRITE YOUR CODE HERE
+            when WEST_WAIT =>
+                south_o <= c_RED;
+                west_o  <= c_YELLOW; -- YELLOW (RGB = 110)
+                
+            when STOP2 =>
+                south_o <= c_RED;
+                west_o  <= c_RED;
+                
+            when SOUTH_GO =>
+                south_o <= c_GREEN;
+                west_o  <= c_RED;
+                
+            when SOUTH_WAIT =>
+                south_o <= c_YELLOW;
+                west_o  <= c_RED;    
+            
 
-
-            s_d <= '0';
-            s_clk <= '0';
-            
-            wait for 10ns;
-            s_d <= '1';
-            wait for 10ns;
-            s_d <= '0';
-            wait for 10ns;
-            s_d <= '1';
-            wait for 10ns;
-            s_d <= '0';
-            
-            s_clk <= '1';
-          
-            wait for 10ns;
-            s_d <= '1';
-            wait for 10ns;
-            s_d <= '0';
-            wait for 10ns;
-            s_d <= '1';
-            wait for 10ns;
-            s_d <= '0'; 
-            
-            s_d <= '1';
-            s_clk <= '0';
-            
-            wait for 10ns;
-            s_d <= '1';
-            wait for 10ns;
-            s_d <= '0';
-            wait for 10ns;
-            s_d <= '1';
-            wait for 10ns;
-            s_d <= '0';
-            
-            s_clk <= '1';
-          
-            wait for 10ns;
-            s_d <= '1';
-            wait for 10ns;
-            s_d <= '0';
-            wait for 10ns;
-            s_d <= '1';
-            wait for 10ns;
-            s_d <= '0';       
-            report "Stimulus process finished" severity note;
-            wait;    
-end process p_stimulus;
+            when others =>
+                south_o <= c_RED;
+                west_o  <= c_RED;
+        end case;
+    end process p_output_fsm;
 
 ```
 
