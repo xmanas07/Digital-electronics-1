@@ -186,8 +186,93 @@ p_output_fsm : process(s_state)
 
 ![Screenshot](images/pic2.png)
 
-### p_smart_traffic_fsm process (`tlc`)
+### p_smart_traffic_fsm process (`stlc`)
 
+```vhdl
 
+p_smart_traffic_fsm : process(clk)
+    begin
+        if rising_edge(clk) then
+            if (reset = '1') then       -- Synchronous reset
+                s_state <= goS ;      -- Set initial state
+                s_cnt   <= c_ZERO;      -- Clear all bits
+
+            elsif (s_en = '1') then
+                -- Every 250 ms, CASE checks the value of the s_state 
+                -- variable and changes to the next state according 
+                -- to the delay value.
+                case s_state is
+
+                    -- If the current state is STOP1, then wait 1 sec
+                    -- and move to the next GO_WAIT state.
+                    when goS =>
+                       if (cars = "00" or cars = "10") then
+                       s_state  <= goS;
+                        if (s_cnt < c_DELAY_4SEC) then
+                            s_cnt <= s_cnt + 1;
+                        end if;
+                       
+                       else
+                        -- Count up to c_DELAY_4SEC
+                        if (s_cnt < c_DELAY_4SEC) then
+                            s_cnt <= s_cnt + 1;
+                        else
+                            -- Move to the next state
+                            s_state <= waitS;
+                            -- Reset local counter value
+                            s_cnt   <= c_ZERO;
+                        end if;
+                       end if;
+                    when waitS =>
+       
+                        -- Count up to c_DELAY_1SEC
+                        if (s_cnt < c_DELAY_1SEC) then
+                            s_cnt <= s_cnt + 1;
+                        else
+                            -- Move to the next state
+                            s_state <= goW;
+                            -- Reset local counter value
+                            s_cnt   <= c_ZERO;
+                        end if;
+
+                    when goW =>
+                       if (cars = "00" or cars = "01") then
+                       s_state  <= goW;
+                        if (s_cnt < c_DELAY_4SEC) then
+                            s_cnt <= s_cnt + 1;
+                        end if;
+                       else
+                        -- Count up to c_DELAY_4SEC
+                        if (s_cnt < c_DELAY_4SEC) then
+                            s_cnt <= s_cnt + 1;
+                        else
+                            -- Move to the next state
+                            s_state <= waitW;
+                            -- Reset local counter value
+                            s_cnt   <= c_ZERO;
+                        end if;
+                       end if;
+                    when waitW =>
+                     
+                        -- Count up to c_DELAY_1SEC
+                        if (s_cnt < c_DELAY_1SEC) then
+                            s_cnt <= s_cnt + 1;
+                        else
+                            -- Move to the next state
+                            s_state <= goS;
+                            -- Reset local counter value
+                            s_cnt   <= c_ZERO;
+                        end if;   
+                    
+                   
+                    when others =>
+                        s_state <= goS;
+
+                end case;
+            end if; -- Synchronous reset
+        end if; -- Rising edge
+    end process p_smart_traffic_fsm;
+
+```
 
 
