@@ -1,6 +1,6 @@
-webtalk_init -webtalk_dir C:/Documents/Labs/08-traffic_lights/traffic/traffic.sim/sim_1/behav/xsim/xsim.dir/tb_tlc_behav/webtalk/
+webtalk_init -webtalk_dir C:/Documents/Labs/08-traffic_lights/traffic/traffic.sim/sim_1/behav/xsim/xsim.dir/tb_stlc_behav/webtalk/
 webtalk_register_client -client project
-webtalk_add_data -client project -key date_generated -value "Tue Apr  6 16:59:56 2021" -context "software_version_and_target_device"
+webtalk_add_data -client project -key date_generated -value "Tue Apr  6 17:26:52 2021" -context "software_version_and_target_device"
 webtalk_add_data -client project -key product_version -value "XSIM v2020.2 (64-bit)" -context "software_version_and_target_device"
 webtalk_add_data -client project -key build_version -value "3064766" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_platform -value "WIN64" -context "software_version_and_target_device"
@@ -28,5 +28,5 @@ webtalk_add_data -client xsim -key runtime -value "2 us" -context "xsim\\usage"
 webtalk_add_data -client xsim -key iteration -value "2" -context "xsim\\usage"
 webtalk_add_data -client xsim -key Simulation_Time -value "0.01_sec" -context "xsim\\usage"
 webtalk_add_data -client xsim -key Simulation_Memory -value "6384_KB" -context "xsim\\usage"
-webtalk_transmit -clientid 2924239739 -regid "" -xml C:/Documents/Labs/08-traffic_lights/traffic/traffic.sim/sim_1/behav/xsim/xsim.dir/tb_tlc_behav/webtalk/usage_statistics_ext_xsim.xml -html C:/Documents/Labs/08-traffic_lights/traffic/traffic.sim/sim_1/behav/xsim/xsim.dir/tb_tlc_behav/webtalk/usage_statistics_ext_xsim.html -wdm C:/Documents/Labs/08-traffic_lights/traffic/traffic.sim/sim_1/behav/xsim/xsim.dir/tb_tlc_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
+webtalk_transmit -clientid 1089087668 -regid "" -xml C:/Documents/Labs/08-traffic_lights/traffic/traffic.sim/sim_1/behav/xsim/xsim.dir/tb_stlc_behav/webtalk/usage_statistics_ext_xsim.xml -html C:/Documents/Labs/08-traffic_lights/traffic/traffic.sim/sim_1/behav/xsim/xsim.dir/tb_stlc_behav/webtalk/usage_statistics_ext_xsim.html -wdm C:/Documents/Labs/08-traffic_lights/traffic/traffic.sim/sim_1/behav/xsim/xsim.dir/tb_stlc_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
 webtalk_terminate
