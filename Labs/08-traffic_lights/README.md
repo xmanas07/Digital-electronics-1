@@ -203,10 +203,9 @@ p_smart_traffic_fsm : process(clk)
                 -- to the delay value.
                 case s_state is
 
-                    -- If the current state is STOP1, then wait 1 sec
-                    -- and move to the next GO_WAIT state.
+                    
                     when goS =>
-                       if (cars = "00" or cars = "10") then
+                       if (cars = "00" or cars = "10") then    
                        s_state  <= goS;
                         if (s_cnt < c_DELAY_4SEC) then
                             s_cnt <= s_cnt + 1;
