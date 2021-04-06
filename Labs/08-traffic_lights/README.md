@@ -1,34 +1,15 @@
 # Digital-electronics-1
 
 ## úkol 1: Preparation tasks
-### characteristic equations and complete truth tables for D, JK, T flip-flops
+### Filled out state table
 
-![Screenshot](images/eq_pic.png)
 
-   | **clk** | **d** | **q(n)** | **q(n+1)** | **Comments** |
-   | :-: | :-: | :-: | :-: | :-- |
-   | ![rising](images/eq_uparrow.png) | 0 | 0 | 0 | Reset |
-   | ![rising](images/eq_uparrow.png) | 0 | 1 | 0 | Reset |
-   | ![rising](images/eq_uparrow.png) | 1 | 0 | 1 | Set |
-   | ![rising](images/eq_uparrow.png) | 1 | 1 | 1 | Set |
 
-   | **clk** | **j** | **k** | **q(n)** | **q(n+1)** | **Comments** |
-   | :-: | :-: | :-: | :-: | :-: | :-- |
-   | ![rising](images/eq_uparrow.png) | 0 | 0 | 0 | 0 | No change |
-   | ![rising](images/eq_uparrow.png) | 0 | 0 | 1 | 1 | No change |
-   | ![rising](images/eq_uparrow.png) | 0 | 1 | 0 | 0 | Reset |
-   | ![rising](images/eq_uparrow.png) | 0 | 1 | 1 | 0 | Reset |
-   | ![rising](images/eq_uparrow.png) | 1 | 0 | 0 | 1 | Set |
-   | ![rising](images/eq_uparrow.png) | 1 | 0 | 1 | 1 | Set |
-   | ![rising](images/eq_uparrow.png) | 1 | 1 | 0 | 1 | Toggle |
-   | ![rising](images/eq_uparrow.png) | 1 | 1 | 1 | 0 | Toggle |
-
-   | **clk** | **t** | **q(n)** | **q(n+1)** | **Comments** |
-   | :-: | :-: | :-: | :-: | :-- |
-   | ![rising](images/eq_uparrow.png) | 0 | 0 | 0 | No change |
-   | ![rising](images/eq_uparrow.png) | 0 | 1 | 1 | No change |
-   | ![rising](images/eq_uparrow.png) | 1 | 0 | 1 | Toggle |
-   | ![rising](images/eq_uparrow.png) | 1 | 1 | 0 | Toggle |
+   | **Input P** | `0` | `0` | `1` | `1` | `0` | `1` | `0` | `1` | `1` | `1` | `1` | `0` | `0` | `1` | `1` | `1` |
+| :-- | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+| **Clock** | ![rising](Images/eq_uparrow.png) | ![rising](Images/eq_uparrow.png) | ![rising](Images/eq_uparrow.png) | ![rising](Images/eq_uparrow.png) | ![rising](Images/eq_uparrow.png) | ![rising](Images/eq_uparrow.png) | ![rising](Images/eq_uparrow.png) | ![rising](Images/eq_uparrow.png) | ![rising](Images/eq_uparrow.png) | ![rising](Images/eq_uparrow.png) | ![rising](Images/eq_uparrow.png) | ![rising](Images/eq_uparrow.png) | ![rising](Images/eq_uparrow.png) | ![rising](Images/eq_uparrow.png) | ![rising](Images/eq_uparrow.png) | ![rising](Images/eq_uparrow.png) |
+| **State** | A | A | B | C | C | D | A | B | C | D | B | B | B | C | D | B |
+| **Output R** | `0` | `0` | `0` | `0` | `0` | `1` | `0` | `0` | `0` | `1` | `0` | `0` | `0` | `0` | `1` | `0` |
 
 
 
