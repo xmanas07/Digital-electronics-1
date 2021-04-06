@@ -13,7 +13,11 @@
 
 
 
-## úkol 2: D latch
+## úkol 2: Traffic light controller
+
+### State diagram
+
+![](images/diagram_trafic.png)
 
 ### p_d_latch process (`d_latch`)
 
