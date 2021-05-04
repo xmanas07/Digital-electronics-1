@@ -1,0 +1,31 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Tue Apr 27 17:50:59 2021
+# Process ID: 8416
+# Current directory: C:/Documents/Labs/06-display_driver/display_driver
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8004 C:\Documents\Labs\06-display_driver\display_driver\display_driver.xpr
+# Log file: C:/Documents/Labs/06-display_driver/display_driver/vivado.log
+# Journal file: C:/Documents/Labs/06-display_driver/display_driver\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Documents/Labs/06-display_driver/display_driver/display_driver.xpr
+WARNING: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Documents/Labs/06-display_driver/display_driver/display_driver.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
+update_compile_order -fileset sources_1
+close_project
+open_project C:/Documents/Labs/parking_assistant/parking_assistant.xpr
+WARNING: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Documents/Labs/parking_assistant/parking_assistant.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Apr 27 18:40:54 2021...
